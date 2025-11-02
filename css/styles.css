@@ -123,6 +123,11 @@ input, textarea { width: 100%; padding: .6rem .75rem; border-radius: .5rem; bord
 /* Footer */
 .site-footer { border-top: 1px solid var(--border); padding: 2rem 0; background: var(--surface); }
 .site-footer .muted { color: var(--muted); margin-top: .25rem; }
+.site-footer .list-inline { list-style: none; display: flex; gap: .25rem; margin: .5rem 0 0; padding: 0; align-items: center; flex-wrap: wrap; }
+.site-footer .list-inline li { display: inline-flex; align-items: center; }
+.site-footer .list-inline li + li::before { content: "·"; opacity: .5; margin: 0 .5rem; }
+.site-footer .list-inline a { color: var(--muted); text-decoration: none; }
+.site-footer .list-inline a:hover { color: var(--brand); text-decoration: underline; }
 
 /* Skip link */
 .skip-link { position: absolute; left: -999px; top: -999px; background: var(--brand-600); color: white; padding: .5rem .75rem; border-radius: .5rem; }
