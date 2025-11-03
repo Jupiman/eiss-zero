@@ -146,6 +146,11 @@ input, textarea { width: 100%; padding: .6rem .75rem; border-radius: .5rem; bord
 .list.tight { padding-left: 1rem; }
 .mt { margin-top: 1rem; }
 
+/* Contact address block */
+.contact-address { font-style: normal; color: var(--text); }
+.contact-address a { color: var(--brand); }
+.contact-address a:hover { text-decoration: underline; }
+
 /* Static waveform line at bottom */
 body::after {
   content: ""; position: fixed; left: 0; right: 0; bottom: 0; height: 40px; pointer-events: none; opacity: .25;
