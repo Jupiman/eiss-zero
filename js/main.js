@@ -76,4 +76,39 @@
       else window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // Disabled chips: prevent navigation and announce tooltip
+  const disabledChips = d.querySelectorAll('.chip[aria-disabled="true"]');
+  if (disabledChips.length) {
+    // Live region for announcements
+    let live = d.getElementById('live-region');
+    if (!live) {
+      live = d.createElement('div');
+      live.id = 'live-region';
+      live.setAttribute('role', 'status');
+      live.setAttribute('aria-live', 'polite');
+      live.style.position = 'absolute';
+      live.style.width = '1px';
+      live.style.height = '1px';
+      live.style.overflow = 'hidden';
+      live.style.clip = 'rect(1px, 1px, 1px, 1px)';
+      live.style.clipPath = 'inset(50%)';
+      live.style.whiteSpace = 'nowrap';
+      live.style.border = '0';
+      d.body.appendChild(live);
+    }
+
+    disabledChips.forEach((chip) => {
+      const msg = chip.getAttribute('data-tooltip') || 'Coming soon';
+      const prevent = (e) => {
+        e.preventDefault();
+        chip.blur();
+        live.textContent = msg;
+      };
+      chip.addEventListener('click', prevent);
+      chip.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') prevent(e);
+      });
+    });
+  }
 })();
