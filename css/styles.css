@@ -153,6 +153,12 @@ input, textarea { width: 100%; padding: .6rem .75rem; border-radius: .5rem; bord
 .contact-address a { color: var(--brand); }
 .contact-address a:hover { text-decoration: underline; }
 
+/* Small inline icon link next to headings */
+.icon-link { display: inline-flex; vertical-align: middle; margin-left: .4rem; color: var(--muted); text-decoration: none; }
+.icon-link:hover { color: var(--brand); }
+.icon-link svg { width: 16px; height: 16px; display: inline-block; }
+.icon-link.disabled { opacity: .6; pointer-events: none; }
+
 /* Static waveform line at bottom */
 body::after {
   content: ""; position: fixed; left: 0; right: 0; bottom: 0; height: 40px; pointer-events: none; opacity: .25;
