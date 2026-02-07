@@ -175,11 +175,14 @@ body::after {
 }
 
 /* Sticky mini-TOC */
-.mini-toc { position: sticky; top: 5.5rem; align-self: start; font-size: .95rem; }
+.mini-toc { font-size: .95rem; }
 .mini-toc ol { margin: 0; padding-left: 1.25rem; }
 .mini-toc li { margin: .35rem 0; }
 .mini-toc a { color: inherit; text-decoration: none; opacity: .9; }
 .mini-toc a:hover, .mini-toc a:focus { text-decoration: underline; text-underline-offset: 2px; opacity: 1; }
+@media (min-width: 768px) {
+  .mini-toc { position: sticky; top: 5.5rem; align-self: start; }
+}
 
 /* Methodology content spacing and anchor offset */
 .methodology-content h4 { margin-top: 1.25rem; }
